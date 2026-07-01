@@ -2,7 +2,7 @@
 
 [![Crates.io][crates-badge]][crates-url]
 [![Crates.io][crates-badge-exe]][crates-url-exe]
-[![Rust](https://github.com/fpco/pid1-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/fpco/pid1-rs/actions/workflows/rust.yml)
+[![Rust](https://github.com/veloxwarp/pid1-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/veloxwarp/pid1-rs/actions/workflows/rust.yml)
 
 [crates-badge]: https://img.shields.io/crates/v/pid1.svg
 [crates-url]: https://crates.io/crates/pid1
@@ -58,7 +58,7 @@ This repository consists of two packages:
 ## `pid1` Library Usage
 
 This library is used to simplify Rust deployment in a containerized
-environment. Instead of using binaries like [Haskell's pid1](https://github.com/fpco/pid1) or
+environment. Instead of using binaries like [Haskell's pid1](https://github.com/veloxwarp/pid1) or
 [tini](https://github.com/krallin/tini) in your container, you can use this crate directly.
 
 ### Usage
@@ -88,7 +88,7 @@ For more examples, see the [examples](./pid1/examples/) directory.
 
 ## `pid1-exe` Binary Usage
 
-You can download the `pid1` binary from the [releases page](https://github.com/fpco/pid1-rs/releases) and use
+You can download the `pid1` binary from the [releases page](https://github.com/veloxwarp/pid1-rs/releases) and use
 it as the `ENTRYPOINT` in your container.
 
 ### Docker Example
@@ -99,7 +99,7 @@ In this example, `your-application` and its arguments are passed using
 ``` dockerfile
 FROM alpine:3.14.2
 
-ADD --chmod=755 https://github.com/fpco/pid1-rs/releases/download/v0.1.0/pid1-x86_64-unknown-linux-musl /usr/bin/pid1
+ADD --chmod=755 https://github.com/veloxwarp/pid1-rs/releases/download/v0.1.6/pid1-x86_64-unknown-linux-musl /usr/bin/pid1
 
 ENTRYPOINT [ "pid1" ]
 CMD [ "your-application", "--arg1" ]
