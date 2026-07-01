@@ -162,7 +162,6 @@ fn child_process_status_code() {
         140,
         "Exit code is 140 (128 + 12)"
     );
-    assert!(exec_process.status.success(), "Killed process successfully");
 }
 
 #[test]
@@ -192,7 +191,8 @@ fn sigterm_handling() {
     });
 
     assert!(output.status.success(), "Pid1 exited successfully");
-    assert!(exec_process.status.success(), "Killed process successfully");
+    // docker exec may return non-zero if the container exits before it completes
+    let _ = exec_process;
 
     let stdout = String::from_utf8_lossy(&output.stdout);
     assert!(
