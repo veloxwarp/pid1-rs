@@ -30,7 +30,7 @@ run-zombie:
 test: build-image
 	docker rm pid1rs || exit 0
 	docker run --name pid1rs -t pid1rstest
-	cargo test
+	cargo test -- --test-threads=1
 
 # Run SIGTERM test
 sigterm-test:

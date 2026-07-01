@@ -2,3 +2,4 @@
 /etc/simple
 .env
 .envrc
+/target-ra
